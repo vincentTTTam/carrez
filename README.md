@@ -69,7 +69,7 @@ node.js + NPM + Material Design (mdl, bootstrap...) + Vanilla JS
 
 What are the given properties for a real estate ad: town, area, type... ?
 
-For example: http://www.leboncoin.fr/ventes_immobilieres/915700197.htm?ca=12_s
+For example: https://www.leboncoin.fr/ventes_immobilieres/1076257949.htm?ca=12_s
 
 #### To do
 
