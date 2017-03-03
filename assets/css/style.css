@@ -1,0 +1,40 @@
+
+
+
+
+
+
+img {
+   display: block;
+    margin: auto;
+    width: 50%;
+}
+
+body {
+    background-color: lightblue;
+}
+
+
+
+
+
+
+
+.container {
+    background-color: #f0f3f3;
+    padding: 0 20px;
+    height: 260px;
+}
+
+ .gras
+ {
+	   text-transform: uppercase;
+   
+ }
+ 
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+}

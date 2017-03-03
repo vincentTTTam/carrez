@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <title>Est ce un bon deal?</title>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+
+
+	
+</head>
+
+<body>
+
+  
+
+        <main>
+<div class="w3-container w3-blue">
+  
+        <h1>Bonjour</h1>
+        <h3>Mettez un lien leboncoin pour voir si c'est un good deal(besoin d'une connexion internet pour le css (W3)</h3>
+        
+           
+                <form method="get" action="/process">
+                    <div class="w3-row">
+                        <div class="w3-col m4 l8">
+
+                            <input type="text" class="w3-input" name="lbcUrl" placeholder="https://www.leboncoin.fr">
+                        </div>
+                        <div class="w3-col m4 l3">
+
+                            <button type="submit" class="w3-btn w3-round-xxlarge">Tell me more</button>
+                        </div>
+                    </div>
+                </form>
+            
+        
+   </div>
+
+
+   
+   <img class="w3-animate-fading" src="https://www.w3schools.com/css/paris.jpg" >
+   
+                <div class="container mg-b-20">
+                  
+				  
+				  
+				  
+				  
+				  <% if ( typeof error !== 'undefined' ) { %>
+
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+  <h1>
+            <%= error %>
+        </h1>
+</div>
+				  
+  
+
+    <% }
+if ( typeof data !== 'undefined' ) { %>
+
+        <div class="row">
+
+            <div class="col-xs-12 col-md-4 mg-b-10">
+                <div class="container">
+                    
+                    
+                    <div >
+                        <div><b>City</b></div>
+                        <div >
+                            <span class="gras"><%= data.lbcData.city.replace( /\_/g, '-' ) %></span>
+                        <span> (<%= data.lbcData.postalCode %>)</span>
+                    </div>
+                    <div class="gras"><b>Price</b></div>
+                    <div >
+                        <span class="gras"><%= data.lbcData.price %> €</span>
+                        <span> (<%= Math.round(data.lbcData.price/data.lbcData.surface) %> €/m<sup>2</sup>)</span>
+                    </div>
+                    <div ><b>Surface</b></div>
+                    <div >
+                        <span class="gras"><%= data.lbcData.surface %> m<sup>2</sup></span>
+                    </div>
+                    <div ><b>Type</b></div>
+                    <div >
+                        <span class="gras" ><%= data.lbcData.type %></span>
+                    </div>
+					 
+					
+					 <div ><b>Price /m<sup>2</sup> (appartment)</b></div>
+                        <div >
+                            <% if ( data.lbcData.type === 'appartement' ) { %>
+                                
+                    <% }%>
+                        <span  class="gras"><%= data.maData.priceAppart %> €</span>
+						
+						<div ><b>Price</b> /m<sup>2</sup> (house)</div>
+                <div >
+                    <% if ( data.lbcData.type !== 'appartement' ) { %>
+                       
+                        <% }%>
+                            <span class="gras"><%= data.maData.priceHouse %> €</span>
+                </div>
+                </div>
+                </div>
+            </div>
+       
+
+    
+
+        
+            <div >
+                <div >
+                    
+                    </div>
+                  
+                    <div >
+                   
+                </div>
+            </div>
+          
+                    
+                </div>
+            </div>
+        </div>
+		
+		
+		
+        </div>
+
+		
+		    <div class="col-xs-12 col-md-4 mg-b-10">
+           
+			<div class="w3-container w3-blue">
+                <h1>Is it a good deal?</h1>
+                <div class="value">
+                    <div>
+                        <% if ( data.deal.good ) { %>
+						
+                            
+                            <div class="w3-container w3-green">
+                               <h1>YES</h1>
+							
+							 </div>	 
+                            </div>
+                            <% } else { %>
+							<div class="w3-container w3-red">
+                                
+                                   
+                               
+                                  <h1>NO</h1>
+								 
+                                
+                                <% } %>
+                    </div>
+                </div>
+           
+        </div>
+        </div>
+
+        <% } %>
+				  
+				  
+				  
+				  
+				  
+                </div>
+
+        </main>
+
+</body>
+
+</html>
